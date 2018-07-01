@@ -4,6 +4,8 @@ Quick sort which always select first element as pivot.
 
 import os.path
 
+count = 0
+
 def swap(A, i, j):
     temp = A[i]
     A[i] = A[j]
@@ -27,6 +29,8 @@ def sort(array):
 def quick_sort(array, lo, hi):
     if lo >= hi:
         return
+    global count
+    count += (hi-lo)
     pivot_index = partition(array, lo, hi)
     quick_sort(array, lo, pivot_index-1)
     quick_sort(array, pivot_index+1, hi)
@@ -42,3 +46,4 @@ with open(filename) as f:
 
 sort(array)
 print(array)
+print(count)
