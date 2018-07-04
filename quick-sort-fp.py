@@ -6,10 +6,12 @@ import os.path
 
 count = 0
 
+
 def swap(A, i, j):
     temp = A[i]
     A[i] = A[j]
     A[j] = temp
+
 
 def partition(A, lo, hi):
     pivot = A[lo]
