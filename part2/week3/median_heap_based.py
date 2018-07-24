@@ -152,22 +152,3 @@ class MedianPQ():
         # even
         else:
             return self.maxPQ.peek()
-
-
-
-def main():
-    mod = 10000
-    dirname = os.path.dirname(__file__)
-    filename = os.path.join(dirname, 'data/median.txt')
-    
-    result = 0
-    pq = MedianPQ()
-    with open(filename) as f:
-        for line in f.readlines():
-            pq.insert(int(line))
-            result += pq.peek()
-            result %= mod
-    print(result)
-    
-if __name__ == '__main__':
-    main()
